@@ -21,7 +21,7 @@ public class MyBatisTest {
 
 	MyBatisTest myBatisTest = new MyBatisTest();
 	myBatisTest.initMyBatis();
-	
+		
 	User user = myBatisTest.getUserById(1);
 	Log.d(user);
 	Log.d("id: " + user.getId());
@@ -29,6 +29,7 @@ public class MyBatisTest {
 	Log.d("password: " + user.getPassword());
 	Log.d("identity_card: " + user.getIdentityCard());
 	Log.d("phone_number: " + user.getPhoneNumber());
+	Log.d("job: " + user.getJob());
     }
 
     private SqlSessionFactory sqlSessionFactory;
