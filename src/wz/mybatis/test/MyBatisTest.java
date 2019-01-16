@@ -69,6 +69,7 @@ public class MyBatisTest {
 //	    String sql = "wz.mybatis.generator.mapper.UserMapper.selectByPrimaryKey";
 	    
 	    user = (User)sqlSession.selectOne(sql,id);
+	    
 	
 	} finally {
 	    sqlSession.close();

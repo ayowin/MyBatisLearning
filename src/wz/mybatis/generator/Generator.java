@@ -12,7 +12,7 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 
 import wzlog4j.Log;
 
-public class MybatisGenerator {
+public class Generator {
 
     public static void main(String[] args) throws Exception {
 	Log.d("-------------MybatisGenerator--------------");
