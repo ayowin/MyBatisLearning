@@ -24,11 +24,11 @@ public class MyBatisTest {
 	
 	User user = myBatisTest.getUserById(1);
 	Log.d(user);
-	Log.d(user.getId());
-	Log.d(user.getUsername());
-	Log.d(user.getPassword());
-	Log.d(user.getIdentityCard());
-	Log.d(user.getPhoneNumber());
+	Log.d("id: " + user.getId());
+	Log.d("username: " + user.getUsername());
+	Log.d("password: " + user.getPassword());
+	Log.d("identity_card: " + user.getIdentityCard());
+	Log.d("phone_number: " + user.getPhoneNumber());
     }
 
     private SqlSessionFactory sqlSessionFactory;
@@ -61,8 +61,12 @@ public class MyBatisTest {
 	
 	try {
 	    
+	    // manual
 	    String sql = "wz.mybatis.manual.UserMapper.getUserById";
+	    
+	    // mybatis-generator
 //	    String sql = "wz.mybatis.generator.mapper.UserMapper.selectByPrimaryKey";
+	    
 	    user = (User)sqlSession.selectOne(sql,id);
 	
 	} finally {
