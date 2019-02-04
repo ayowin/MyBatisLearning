@@ -8,8 +8,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import wz.mybatis.manual.User;
-//import wz.mybatis.generator.entity.User;
+// manual
+//import wz.mybatis.manual.User;
+//import wz.mybatis.manual.UserMapper;
+
+// mybatis-generator
+import wz.mybatis.generator.entity.User;
+import wz.mybatis.generator.mapper.UserMapper;
 
 import wzlog4j.Log;
 
@@ -62,14 +67,28 @@ public class MyBatisTest {
 	
 	try {
 	    
+	    // 方法一：
+	    // 传统的方式，使用*Mapper.xml的【方法全路径】的方式获得entity
+	    // 直观但易错
+	    
 	    // manual
-	    String sql = "wz.mybatis.manual.UserMapper.getUserById";
+//	    String sql = "wz.mybatis.manual.UserMapper.getUserById";
+//	    user = (User)sqlSession.selectOne(sql,id);	
 	    
 	    // mybatis-generator
-//	    String sql = "wz.mybatis.generator.mapper.UserMapper.selectByPrimaryKey";
+//	    String sql = "wz.mybatis.generator.mapper.UserMapper.selectByPrimaryKey"; 
+//	    user = (User)sqlSession.selectOne(sql,id);	    
 	    
-	    user = (User)sqlSession.selectOne(sql,id);
+	    // 方法二：
+	    // 使用getMapper(*Mapper.class)方式获得*Mapper对象的方式获得entity
 	    
+	    // manual
+//	    UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+//	    user = userMapper.getUserById(id);
+	    
+	    // mybatis-generator
+	    UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+	    user  = userMapper.selectByPrimaryKey(id);
 	
 	} finally {
 	    sqlSession.close();
