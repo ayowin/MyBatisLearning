@@ -1,0 +1,1 @@
+2019-2-18 9:06:47 [ERROR]: mybatis-generator generate POJO,Mapper,Mapper.xml failed.

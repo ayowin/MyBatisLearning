@@ -11,19 +11,19 @@
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
-			
+
 				<!-- 
-				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3306/wzweb" />
-				<property name="username" value="root" />
-				<property name="password" value="652719p" />				
-				 -->
-				 
+				<property name="driver" value="com.mysql.jdbc.Driver" /> 
+				<property name="url" value="jdbc:mysql://localhost:3306/ssm_demo" /> 
+				<property name="username" value="root" /> 
+				<property name="password" value="652719p" /> 
+				-->
+
 				<property name="driver" value="${driver}" />
 				<property name="url" value="${url}" />
 				<property name="username" value="${username}" />
-				<property name="password" value="${password}" />	
-				 
+				<property name="password" value="${password}" />
+
 			</dataSource>
 		</environment>
 	</environments>
@@ -32,5 +32,5 @@
 		<mapper resource="wz/mybatis/manual/UserMapper.xml" />
 		<mapper resource="wz/mybatis/generator/mapper/UserMapper.xml" />
 	</mappers>
-
+	
 </configuration>
